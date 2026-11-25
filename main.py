@@ -6,4 +6,6 @@ os.makedirs("/output", exist_ok=True)
 with open("/output/entry.txt", "w", encoding="utf-8") as f:
     f.write(LINE)
 
+if not (1 <= len(LINE) <= 200) or not LINE.strip() or "\n" in LINE.strip():
+    raise SystemExit("invalid entry")
 print(LINE)
